@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "loggingAndTesting/lib/slf4j-api-1.7.25.jar",
+        "loggingAndTesting/lib/slf4j-simple-1.7.25.jar"
+    ]
+}

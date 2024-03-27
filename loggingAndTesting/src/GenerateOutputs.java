@@ -1,30 +1,48 @@
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GenerateOutputs {
-    Logger logger;
+    private Logger l;
 
-    public GenerateOutputs () {
+    public GenerateOutputs() {
         outputInfo();
+
         outputDebug();
+
+        outputWarn();
+
+        outputError();
     }
 
-    public void outputInfo () {
-        System.out.println("This is some info");
+    public void outputInfo() {
+        //System.out.println("Informational Only!!");
 
-        getLogger().info("This is also some info");
+        getLogger().info("A real info log");
     }
 
-    public Logger getLogger () {
-        if (logger == null) {
-            logger = LoggerFactory.getLogger(GenerateOutputs.class);
+    public void outputDebug() {
+        //System.out.println("A poor man's debug.");
+
+        getLogger().debug("A real debug!");
+    }
+
+    public void outputWarn() {
+        //System.out.println("Sound the alarm! Warn the troops!");
+
+        getLogger().warn("Oh boy, it's getting spicy!");
+    }
+
+    public void outputError() {
+        //System.out.println("An error! Onoz!");
+
+        getLogger().error("Oh crap, an error!");
+    }
+
+    private Logger getLogger() {
+        if (l == null) {
+            l = LoggerFactory.getLogger(GenerateOutputs.class);
         }
 
-        return logger;
-    }
-
-    public void outputDebug () {
-        System.out.println("This is a debug");
-
-        getLogger().debug("This is a better debug message or something");
+        return l;
     }
 }
